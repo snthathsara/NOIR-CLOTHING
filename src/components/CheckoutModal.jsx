@@ -64,7 +64,7 @@ export const CheckoutModal = () => {
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-5 right-5 z-20 w-9 h-9 rounded-full bg-pill hover:bg-pill-hover text-text-primary flex items-center justify-center transition-transform active:scale-90"
+          className="no-print absolute top-5 right-5 z-20 w-9 h-9 rounded-full bg-pill hover:bg-pill-hover text-text-primary flex items-center justify-center transition-transform active:scale-90"
         >
           <X className="w-4 h-4" />
         </button>
@@ -205,7 +205,7 @@ export const CheckoutModal = () => {
           <div className="space-y-6 animate-fade-in">
             
             {/* Header */}
-            <div className="text-center pb-2">
+            <div className="no-print text-center pb-2">
               <div className="w-12 h-12 rounded-full bg-btn-primary-bg text-btn-primary-text flex items-center justify-center mx-auto mb-3 shadow-md">
                 <Award className="w-6 h-6" />
               </div>
@@ -306,7 +306,7 @@ export const CheckoutModal = () => {
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="space-y-3 pt-2">
+            <div className="no-print space-y-3 pt-2">
               
               {/* Big Call Us to Place Your Order Button (Primary Requirement) */}
               <button

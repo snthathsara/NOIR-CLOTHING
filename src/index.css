@@ -257,3 +257,69 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Print Styles: Strict 1-Page Quotation Formatting */
+@media print {
+  @page {
+    margin: 12mm;
+    size: portrait;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide background elements, headers, footers, and overlays */
+  header,
+  main,
+  footer,
+  .grain-overlay,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Make fixed modal wrapper behave as clean inline block */
+  .fixed.inset-0 {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .fixed.inset-0 > div {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+  }
+
+  /* Only display the clean single quotation print container */
+  #quotation-print-area {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    border: 1.5px solid #000000 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  #quotation-print-area * {
+    color: #000000 !important;
+    border-color: #cccccc !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
