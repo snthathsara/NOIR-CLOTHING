@@ -6,19 +6,19 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem('noir-cart');
+      const saved = localStorage.getItem('daizy-cart');
       return saved ? JSON.parse(saved) : [
         {
           id: 'prod-01',
-          name: 'The Monolith Emerald Overcoat',
-          price: 1650,
+          name: 'The Minimalist Overcoat',
+          price: 1450,
           size: 'M',
-          color: 'Forest Obsidian',
+          color: 'Charcoal Black',
           image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=85',
           quantity: 1,
-          drop: 'Drop 04 // Botanical Edition',
-          material: 'Loro Piana 100% Cashmere',
-          sku: 'NOIR-EMR-04-01'
+          drop: 'Collection 2026 — Capsule 04',
+          material: '100% Double-Faced Cashmere',
+          sku: 'DAIZY-OVC-04-01'
         }
       ];
     } catch {
@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
 
   const [wishlist, setWishlist] = useState(() => {
     try {
-      const saved = localStorage.getItem('noir-wishlist');
+      const saved = localStorage.getItem('daizy-wishlist');
       return saved ? JSON.parse(saved) : ['prod-02', 'prod-14', 'prod-17'];
     } catch {
       return [];
@@ -47,7 +47,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('noir-cart', JSON.stringify(cart));
+      localStorage.setItem('daizy-cart', JSON.stringify(cart));
     } catch (e) {
       console.error(e);
     }
@@ -55,7 +55,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('noir-wishlist', JSON.stringify(wishlist));
+      localStorage.setItem('daizy-wishlist', JSON.stringify(wishlist));
     } catch (e) {
       console.error(e);
     }

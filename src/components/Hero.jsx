@@ -19,14 +19,14 @@ export const Hero = () => {
           className="relative w-full rounded-3xl border border-border-default bg-surface transition-colors duration-500 overflow-hidden min-h-[640px] sm:min-h-[720px] lg:min-h-[800px] flex items-center justify-center p-6 sm:p-12 shadow-sm animate-fade-in"
         >
           
-          {/* Split Background Words: NOIR on Left, CLOTHING on Right (Strictly Contained with Zero Cut-off) */}
+          {/* Split Background Words: DAIZY on Left, CLOTHING on Right (Strictly Contained with Zero Cut-off) */}
           <div className="absolute inset-0 flex items-center justify-between px-6 sm:px-12 md:px-16 lg:px-20 pointer-events-none select-none z-0">
-            {/* Left Word: NOIR */}
+            {/* Left Word: DAIZY */}
             <span 
               className="text-[#0A0A0A] dark:text-white font-black tracking-[-0.04em] uppercase font-sans leading-none opacity-95 transition-transform duration-700"
               style={{ fontSize: 'clamp(44px, 9vw, 130px)' }}
             >
-              NOIR
+              DAIZY
             </span>
 
             {/* Right Word: CLOTHING */}
@@ -45,7 +45,7 @@ export const Hero = () => {
 
             <img
               src="/cutouts/streetwear-model.png"
-              alt="NOIR CLOTHING Streetwear Tracksuit Cutout Silhouette"
+              alt="DAIZY CLOTHING Streetwear Tracksuit Cutout Silhouette"
               className="h-full w-auto object-contain object-bottom drop-shadow-2xl transition-transform duration-700 hover:scale-[1.02] pointer-events-auto"
               style={{
                 filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.12))'

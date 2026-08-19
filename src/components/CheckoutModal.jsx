@@ -38,7 +38,7 @@ export const CheckoutModal = () => {
 
   const handleGenerateQuotation = (e) => {
     e.preventDefault();
-    const token = `QT-NOIR-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    const token = `QT-DAIZY-2026-${Math.floor(1000 + Math.random() * 9000)}`;
     setQuotationNumber(token);
     setQuotationDate(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
     setStep(2);
@@ -74,7 +74,7 @@ export const CheckoutModal = () => {
           <form onSubmit={handleGenerateQuotation} className="space-y-6">
             <div>
               <div className="mono-telemetry text-text-muted mb-1 text-[10px]">
-                NOIR CLOTHING • CHECKOUT & QUOTATION
+                DAIZY CLOTHING • CHECKOUT & QUOTATION
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-text-primary font-sans">
                 Prepare Official Quotation
@@ -222,10 +222,10 @@ export const CheckoutModal = () => {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-border-default gap-3">
                 <div>
                   <div className="text-base font-bold text-text-primary uppercase font-sans tracking-tight">
-                    NOIR CLOTHING™ ATELIER
+                    DAIZY CLOTHING™ ATELIER
                   </div>
                   <div className="text-[10px] text-text-muted">14 Via Montenapoleone, 20121 Milano, Italy</div>
-                  <div className="text-[10px] text-text-muted">concierge@noirclothing.com • +1 (800) 555-0199</div>
+                  <div className="text-[10px] text-text-muted">concierge@daizyclothing.com • +1 (800) 555-0199</div>
                 </div>
 
                 <div className="sm:text-right">
@@ -361,7 +361,7 @@ export const CheckoutModal = () => {
             </div>
 
             <div>
-              <div className="mono-telemetry text-text-muted text-[10px] mb-1">NOIR CLOTHING • VIP CONCIERGE DESK</div>
+              <div className="mono-telemetry text-text-muted text-[10px] mb-1">DAIZY CLOTHING • VIP CONCIERGE DESK</div>
               <h4 className="text-xl font-bold uppercase text-text-primary font-sans">
                 Direct Client Hotline
               </h4>

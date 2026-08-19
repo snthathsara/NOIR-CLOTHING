@@ -67,7 +67,7 @@ export const Footer = () => {
           {/* Part 1: Brand Philosophy & Monogram */}
           <div className="md:col-span-5 space-y-4">
             <div className="font-black text-xl uppercase tracking-tight flex items-center gap-2 font-sans">
-              <span>NOIR CLOTHING</span>
+              <span>DAIZY CLOTHING</span>
               <span className="text-text-muted font-normal text-xs">™</span>
             </div>
             <p className="text-text-secondary font-light max-w-sm leading-relaxed">
@@ -112,7 +112,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
           <div className="mono-telemetry text-[10px]">
-            © 2026 NOIR CLOTHING. ALL RIGHTS RESERVED.
+            © 2026 DAIZY CLOTHING. ALL RIGHTS RESERVED.
           </div>
 
           <div className="flex items-center gap-6 mono-telemetry text-[10px]">

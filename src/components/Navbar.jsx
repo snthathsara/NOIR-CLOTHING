@@ -69,7 +69,7 @@ export const Navbar = ({ onSelectCategory, onNavigateHome }) => {
             <div className="flex flex-col text-left leading-none font-sans">
               <div className="flex items-center gap-1.5">
                 <span className="text-sm sm:text-base font-extrabold tracking-tight text-text-primary group-hover:text-text-muted transition-colors">
-                  Noir
+                  Daizy
                 </span>
                 <span className="text-[10px] text-text-primary">✦</span>
               </div>
