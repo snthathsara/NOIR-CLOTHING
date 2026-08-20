@@ -6,21 +6,8 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem('daizy-cart');
-      return saved ? JSON.parse(saved) : [
-        {
-          id: 'prod-01',
-          name: 'The Minimalist Overcoat',
-          price: 1450,
-          size: 'M',
-          color: 'Charcoal Black',
-          image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=85',
-          quantity: 1,
-          drop: 'Collection 2026 — Capsule 04',
-          material: '100% Double-Faced Cashmere',
-          sku: 'DAIZY-OVC-04-01'
-        }
-      ];
+      const saved = localStorage.getItem('daizy-cart-v3');
+      return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
     }
@@ -28,8 +15,8 @@ export const CartProvider = ({ children }) => {
 
   const [wishlist, setWishlist] = useState(() => {
     try {
-      const saved = localStorage.getItem('daizy-wishlist');
-      return saved ? JSON.parse(saved) : ['prod-02', 'prod-14', 'prod-17'];
+      const saved = localStorage.getItem('daizy-wishlist-v3');
+      return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
     }
@@ -47,7 +34,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('daizy-cart', JSON.stringify(cart));
+      localStorage.setItem('daizy-cart-v3', JSON.stringify(cart));
     } catch (e) {
       console.error(e);
     }
@@ -55,7 +42,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('daizy-wishlist', JSON.stringify(wishlist));
+      localStorage.setItem('daizy-wishlist-v3', JSON.stringify(wishlist));
     } catch (e) {
       console.error(e);
     }
