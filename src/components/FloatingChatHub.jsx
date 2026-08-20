@@ -17,7 +17,7 @@ const FacebookIcon = ({ className = "w-4 h-4" }) => (
 );
 
 export const FloatingChatHub = () => {
-  const { activeBrand } = useBrand();
+  const { activeBrand, activeBrandKey } = useBrand();
   const [isOpen, setIsOpen] = useState(false);
   const hubRef = useRef(null);
 
