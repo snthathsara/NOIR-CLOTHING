@@ -209,26 +209,26 @@ export const bespokeConfiguratorData = {
 
 export const atelierLocations = [
   {
+    city: 'AMBALANGODA',
+    name: 'Daizy Flagship Boutique & Salon',
+    address: 'Main Street, Ambalangoda 80300, Southern Province, Sri Lanka',
+    hours: 'Mon — Sun: 09:30 — 19:30 IST (Walk-ins & Private Fittings)',
+    telemetry: 'LAT 6.2364° N, LON 80.0543° E',
+    leadTailor: 'Master Tailor & Stylist'
+  },
+  {
     city: 'COLOMBO',
-    name: 'Flagship Atelier & Private Vault',
+    name: 'Colombo Private Studio',
     address: 'No. 42 Ward Place, Colombo 07, Sri Lanka',
-    hours: 'Mon — Sat: 10:00 — 19:30 IST (Private Appointment Available)',
+    hours: 'Mon — Sat: 10:00 — 19:00 IST',
     telemetry: 'LAT 6.9147° N, LON 79.8732° E',
     leadTailor: 'Directrice Francesca De Luca'
   },
   {
-    city: 'KANDY',
-    name: 'Hill Country Sanctuary',
-    address: '18 Victoria Drive, Kandy, Sri Lanka',
-    hours: 'Tue — Sat: 11:00 — 19:00 IST',
-    telemetry: 'LAT 7.2906° N, LON 80.6337° E',
-    leadTailor: 'Artisan Julian Sterling'
-  },
-  {
     city: 'GALLE',
-    name: 'Galle Fort Heritage Studio',
+    name: 'Galle Fort Heritage Atelier',
     address: '24 Church Street, Galle Fort 80000, Sri Lanka',
-    hours: 'Wed — Sun: 11:00 — 20:00 IST',
+    hours: 'Wed — Sun: 10:30 — 19:30 IST',
     telemetry: 'LAT 6.0270° N, LON 80.2170° E',
     leadTailor: 'Master Emi Takahashi'
   },

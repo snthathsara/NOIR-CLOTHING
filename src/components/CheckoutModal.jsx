@@ -384,14 +384,14 @@ export const CheckoutModal = () => {
               </a>
 
               <a
-                href="https://wa.me/18005550199"
+                href="https://chat.whatsapp.com/GQv2J7psMR1Gvt5mfWW9Zq?mode=gi_t&utm_source=ig&utm_medium=social&utm_content=link_in_bio"
                 target="_blank"
                 rel="noreferrer"
                 className="p-3.5 rounded-xl bg-surface-subtle border border-border-default flex items-center justify-between hover:bg-pill transition-colors text-text-primary block"
               >
                 <div>
-                  <span className="font-bold block">WhatsApp Private Concierge</span>
-                  <span className="text-[11px] text-text-muted">Instant Order Dispatch</span>
+                  <span className="font-bold block">WhatsApp VIP Community</span>
+                  <span className="text-[11px] text-text-muted">Instant Order Dispatch & Inquiries</span>
                 </div>
                 <span className="text-[10px] font-bold px-2 py-1 rounded bg-emerald-600 text-white">WHATSAPP</span>
               </a>

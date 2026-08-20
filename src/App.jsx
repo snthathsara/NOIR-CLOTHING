@@ -14,6 +14,7 @@ import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
 import { ConciergeModal } from './components/ConciergeModal';
 import { ToastNotification } from './components/ToastNotification';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Footer } from './components/Footer';
 
 export const MainContent = () => {
@@ -88,6 +89,7 @@ export const MainContent = () => {
       <CheckoutModal />
       <ConciergeModal />
       <ToastNotification />
+      <FloatingWhatsApp />
 
     </div>
   );
