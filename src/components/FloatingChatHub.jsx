@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useBrand } from '../context/BrandContext';
 import { MessageCircle, X, ArrowUpRight } from 'lucide-react';
 
 const InstagramIcon = ({ className = "w-4 h-4" }) => (
@@ -16,12 +17,11 @@ const FacebookIcon = ({ className = "w-4 h-4" }) => (
 );
 
 export const FloatingChatHub = () => {
+  const { activeBrand } = useBrand();
   const [isOpen, setIsOpen] = useState(false);
   const hubRef = useRef(null);
 
-  const whatsappUrl = 'https://chat.whatsapp.com/GQv2J7psMR1Gvt5mfWW9Zq?mode=gi_t&utm_source=ig&utm_medium=social&utm_content=link_in_bio';
-  const instagramUrl = 'https://www.instagram.com/daizy_clothing/';
-  const facebookUrl = 'https://www.facebook.com/p/Daizy-Clothing-61587159035933/';
+  const { whatsappUrl, whatsappText, whatsappSub, instagramUrl, instagramHandle, facebookUrl, facebookName } = activeBrand.social;
 
   // Close when clicking outside
   useEffect(() => {
@@ -44,7 +44,7 @@ export const FloatingChatHub = () => {
             <div>
               <div className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                DAIZY DIRECT CHAT
+                {activeBrand.shortName} DIRECT CHAT
               </div>
               <h4 className="text-xs font-black uppercase text-text-primary font-sans mt-0.5">
                 Connect with our team
@@ -59,7 +59,7 @@ export const FloatingChatHub = () => {
           </div>
 
           <div className="space-y-2">
-            {/* WhatsApp Group */}
+            {/* WhatsApp */}
             <a
               href={whatsappUrl}
               target="_blank"
@@ -67,15 +67,15 @@ export const FloatingChatHub = () => {
               className="flex items-center justify-between p-3 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 text-text-primary transition-all group"
             >
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-md">
+                <div className="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-md shrink-0">
                   <MessageCircle className="w-4 h-4 fill-current" />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs font-bold font-sans">Join Our WhatsApp Group</div>
-                  <div className="text-[10px] text-text-muted">Direct drops & member discounts</div>
+                  <div className="text-xs font-bold font-sans">{whatsappText}</div>
+                  <div className="text-[10px] text-text-muted">{whatsappSub}</div>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-[#25D366] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-4 h-4 text-[#25D366] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
             </a>
 
             {/* Instagram DM */}
@@ -86,15 +86,15 @@ export const FloatingChatHub = () => {
               className="flex items-center justify-between p-3 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 border border-pink-500/30 text-text-primary transition-all group"
             >
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shadow-md">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shadow-md shrink-0">
                   <InstagramIcon className="w-4 h-4 stroke-white" />
                 </div>
                 <div className="text-left">
                   <div className="text-xs font-bold font-sans">Instagram DM</div>
-                  <div className="text-[10px] text-text-muted">@daizy_clothing</div>
+                  <div className="text-[10px] text-text-muted">{instagramHandle}</div>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-pink-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-4 h-4 text-pink-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
             </a>
 
             {/* Facebook Chat */}
@@ -105,15 +105,15 @@ export const FloatingChatHub = () => {
               className="flex items-center justify-between p-3 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 border border-blue-600/30 text-text-primary transition-all group"
             >
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-md">
+                <div className="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-md shrink-0">
                   <FacebookIcon className="w-4 h-4" />
                 </div>
                 <div className="text-left">
                   <div className="text-xs font-bold font-sans">Facebook Message</div>
-                  <div className="text-[10px] text-text-muted">Daizy Clothing Ambalangoda</div>
+                  <div className="text-[10px] text-text-muted">{facebookName}</div>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-[#1877F2] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-4 h-4 text-[#1877F2] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
             </a>
           </div>
 
@@ -127,7 +127,7 @@ export const FloatingChatHub = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0A0A0A] dark:bg-white text-white dark:text-[#0A0A0A] shadow-2xl border border-border-default hover:scale-105 active:scale-95 transition-all duration-300 group font-sans"
-        title="Chat with Daizy Clothing on WhatsApp, Instagram or Facebook"
+        title={`Chat with ${activeBrand.name} on WhatsApp, Instagram or Facebook`}
       >
         <div className="flex items-center -space-x-1.5">
           <span className="w-6 h-6 rounded-full bg-[#25D366] text-white flex items-center justify-center ring-2 ring-page">
@@ -141,7 +141,7 @@ export const FloatingChatHub = () => {
           </span>
         </div>
         <span className="text-xs font-bold tracking-wide uppercase font-mono pl-1">
-          Join Our WhatsApp Group & Chat
+          {activeBrandKey === 'daizy' ? 'Join WhatsApp Group & Chat' : 'Chat on WhatsApp & Socials'}
         </span>
       </button>
 

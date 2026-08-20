@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { useBrand } from '../context/BrandContext';
 import confetti from 'canvas-confetti';
 import { X, Check, PhoneCall, Download, Printer, ShieldCheck, ArrowRight, Sparkles, Clock, MapPin, Award, Building, User, Mail, Phone } from 'lucide-react';
 
 export const CheckoutModal = () => {
   const { isCheckoutOpen, setIsCheckoutOpen, cart, rawSubtotal, discountAmount, shippingFee, total, clearCart } = useCart();
+  const { activeBrand } = useBrand();
   
   const [step, setStep] = useState(1);
   const [showCallModal, setShowCallModal] = useState(false);
   const [formData, setFormData] = useState({
-    name: 'Julian Sterling',
-    email: 'client.sterling@vault.com',
-    phone: '+1 (415) 890-2194',
-    company: 'Sterling Private Holdings',
-    address: '14 Via Montenapoleone, Suite 4B',
-    city: 'Milano',
-    country: 'Italy',
-    notes: 'Please arrange private fitting and signature gift packaging.'
+    name: 'Customer Guest',
+    email: 'client@example.com',
+    phone: '+94 77 123 4567',
+    company: 'Private Client',
+    address: 'Galle Road',
+    city: 'Ambalangoda',
+    country: 'Sri Lanka',
+    notes: 'Please arrange islandwide courier delivery / COD.'
   });
   const [quotationNumber, setQuotationNumber] = useState('');
   const [quotationDate, setQuotationDate] = useState('');
@@ -38,7 +40,7 @@ export const CheckoutModal = () => {
 
   const handleGenerateQuotation = (e) => {
     e.preventDefault();
-    const token = `QT-DAIZY-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    const token = `${activeBrand.quotePrefix}-${Math.floor(1000 + Math.random() * 9000)}`;
     setQuotationNumber(token);
     setQuotationDate(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
     setStep(2);
@@ -361,39 +363,39 @@ export const CheckoutModal = () => {
             </div>
 
             <div>
-              <div className="mono-telemetry text-text-muted text-[10px] mb-1">DAIZY CLOTHING • VIP CONCIERGE DESK</div>
+              <div className="mono-telemetry text-text-muted text-[10px] mb-1">{activeBrand.name} • DIRECT CLIENT DESK</div>
               <h4 className="text-xl font-bold uppercase text-text-primary font-sans">
                 Direct Client Hotline
               </h4>
               <p className="text-xs text-text-secondary mt-1 font-light">
-                Please quote your reference <strong>#{quotationNumber}</strong> when connecting with our Senior Client Advisor.
+                Please quote your reference <strong>#{quotationNumber}</strong> when connecting with our style advisors.
               </p>
             </div>
 
             {/* Direct Dial Links */}
             <div className="space-y-2.5 text-xs font-mono text-left">
               <a
-                href="tel:+18005550199"
-                className="p-3.5 rounded-xl bg-surface-subtle border border-border-default flex items-center justify-between hover:bg-pill transition-colors text-text-primary block"
-              >
-                <div>
-                  <span className="font-bold block">Milano & Global Toll-Free</span>
-                  <span className="text-[11px] text-text-muted">+1 (800) 555-0199</span>
-                </div>
-                <span className="text-[10px] font-bold px-2 py-1 rounded bg-btn-primary-bg text-btn-primary-text">CALL NOW</span>
-              </a>
-
-              <a
-                href="https://chat.whatsapp.com/GQv2J7psMR1Gvt5mfWW9Zq?mode=gi_t&utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+                href={activeBrand.social.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="p-3.5 rounded-xl bg-surface-subtle border border-border-default flex items-center justify-between hover:bg-pill transition-colors text-text-primary block"
               >
                 <div>
-                  <span className="font-bold block">Join Our WhatsApp Group</span>
-                  <span className="text-[11px] text-text-muted">Instant Order Confirmation & Drops</span>
+                  <span className="font-bold block">{activeBrand.social.whatsappText}</span>
+                  <span className="text-[11px] text-text-muted">{activeBrand.social.whatsappSub}</span>
                 </div>
                 <span className="text-[10px] font-bold px-2 py-1 rounded bg-emerald-600 text-white">WHATSAPP</span>
+              </a>
+
+              <a
+                href={`mailto:${activeBrand.social.email}`}
+                className="p-3.5 rounded-xl bg-surface-subtle border border-border-default flex items-center justify-between hover:bg-pill transition-colors text-text-primary block"
+              >
+                <div>
+                  <span className="font-bold block">Email Direct Desk</span>
+                  <span className="text-[11px] text-text-muted">{activeBrand.social.email}</span>
+                </div>
+                <span className="text-[10px] font-bold px-2 py-1 rounded bg-btn-primary-bg text-btn-primary-text">EMAIL</span>
               </a>
             </div>
 

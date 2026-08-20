@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { useBrand } from '../context/BrandContext';
 import { Eye, Plus, ArrowUpRight, Heart, SlidersHorizontal, Sparkles } from 'lucide-react';
 
 const ScrollRevealProductCard = ({ product, idx, onSelectProduct, selectedSize, onSizeSelect, onQuickAdd, isSaved, onToggleWishlist }) => {
@@ -151,6 +152,7 @@ export const LookbookGrid = ({ activeCategory, setActiveCategory, onSelectProduc
   const [sortBy, setSortBy] = useState('featured');
   const [selectedSizes, setSelectedSizes] = useState({});
   const { addToCart, setQuickViewProduct, wishlist, toggleWishlist, searchQuery, setSearchQuery } = useCart();
+  const { activeBrand } = useBrand();
 
   const handleProductClick = (product) => {
     if (onSelectProduct) {
@@ -160,14 +162,11 @@ export const LookbookGrid = ({ activeCategory, setActiveCategory, onSelectProduc
     }
   };
 
-  const categories = [
-    { id: 'all', label: 'All Pieces', count: products.length },
-    { id: 'silhouettes', label: 'Dresses & Gowns', count: products.filter(p => p.category === 'silhouettes').length },
-    { id: 'outerwear', label: 'Coats & Outerwear', count: products.filter(p => p.category === 'outerwear').length },
-    { id: 'tailoring', label: 'Tailoring & Suiting', count: products.filter(p => p.category === 'tailoring').length },
-    { id: 'knitwear', label: 'Knitwear & Tops', count: products.filter(p => p.category === 'knitwear').length },
-    { id: 'accessories', label: 'Leather & Accessories', count: products.filter(p => p.category === 'accessories').length },
-  ];
+  const categories = activeBrand.categories.map(c => ({
+    id: c.id,
+    label: c.label,
+    count: c.id === 'all' ? products.length : products.filter(p => p.category === c.id).length
+  }));
 
   const filteredAndSortedProducts = useMemo(() => {
     let list = [...products];

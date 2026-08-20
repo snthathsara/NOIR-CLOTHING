@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { useCart } from '../context/CartContext';
+import { useBrand } from '../context/BrandContext';
 import { Search, Heart, ShoppingBag, Sun, Moon, Sparkles, X } from 'lucide-react';
 
 export const Navbar = ({ onSelectCategory, onNavigateHome }) => {
+  const { activeBrand } = useBrand();
   const { theme, toggleTheme } = useTheme();
   const { itemCount, wishlistCount, setIsCartOpen, setIsConciergeOpen, searchQuery, setSearchQuery } = useCart();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -24,10 +26,10 @@ export const Navbar = ({ onSelectCategory, onNavigateHome }) => {
   const navLinks = [
     { label: 'main', category: 'all', targetId: 'hero' },
     { label: 'collection', category: 'all', targetId: 'lookbook' },
-    { label: 'dresses', category: 'silhouettes', targetId: 'lookbook' },
+    { label: 'women', category: 'silhouettes', targetId: 'lookbook' },
     { label: 'outerwear', category: 'outerwear', targetId: 'lookbook' },
     { label: 'tailoring', category: 'tailoring', targetId: 'lookbook' },
-    { label: 'knitwear', category: 'knitwear', targetId: 'lookbook' },
+    { label: 'tops & knits', category: 'knitwear', targetId: 'lookbook' },
   ];
 
   const handleNavClick = (link) => {
@@ -69,13 +71,13 @@ export const Navbar = ({ onSelectCategory, onNavigateHome }) => {
           >
             <div className="flex flex-col text-left leading-none font-sans">
               <div className="flex items-center gap-1.5">
-                <span className="text-sm sm:text-base font-extrabold tracking-tight text-text-primary group-hover:text-text-muted transition-colors">
-                  Daizy
+                <span className="text-sm sm:text-base font-extrabold tracking-tight text-text-primary group-hover:text-text-muted transition-colors uppercase">
+                  {activeBrand.heroSplit[0]}
                 </span>
                 <span className="text-[10px] text-text-primary">✦</span>
               </div>
               <span className="text-[11px] sm:text-xs font-bold tracking-widest lowercase text-text-muted group-hover:text-text-primary transition-colors pt-0.5">
-                clothing
+                {activeBrand.heroSplit[1].toLowerCase()}
               </span>
             </div>
           </a>

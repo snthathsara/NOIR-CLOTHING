@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useBrand } from '../context/BrandContext';
 
 export const Preloader = ({ onFinish }) => {
+  const { activeBrand } = useBrand();
   const [progress, setProgress] = useState(0);
   const [isDone, setIsDone] = useState(false);
 
@@ -32,17 +34,17 @@ export const Preloader = ({ onFinish }) => {
     >
       {/* Top Header */}
       <div className="flex items-center justify-between text-xs font-mono text-text-muted uppercase tracking-widest">
-        <span>DAIZY CLOTHING • ATELIER MILANO</span>
-        <span>AUTUMN & WINTER 2026</span>
+        <span>{activeBrand.name}</span>
+        <span>COLLECTION 2026</span>
       </div>
 
       {/* Center Monogram Title */}
       <div className="text-center space-y-4 max-w-2xl mx-auto">
         <h1 className="text-4xl sm:text-7xl md:text-8xl font-black tracking-[-0.05em] uppercase font-sans text-text-primary">
-          DAIZY CLOTHING
+          {activeBrand.name}
         </h1>
         <p className="text-xs sm:text-sm font-mono text-text-muted tracking-widest uppercase">
-          CAPSULE 04 • MONOLITHIC TECTONICS
+          {activeBrand.tagline}
         </p>
       </div>
 

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { useBrand } from '../context/BrandContext';
 import { ArrowUpRight, Check, Mail, ShieldCheck, Sparkles, MapPin } from 'lucide-react';
 
 export const Footer = () => {
   const { setIsConciergeOpen } = useCart();
+  const { activeBrand } = useBrand();
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -21,13 +23,13 @@ export const Footer = () => {
         <div className="rounded-2xl bg-surface-subtle border border-border-default p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-sm">
           <div className="max-w-xl text-center lg:text-left">
             <div className="mono-telemetry text-text-muted mb-2">
-              PRIVATE COLLECTOR DISPATCH • CAPSULE 05
+              EXCLUSIVE CLIENT DISPATCH • CAPSULE 2026
             </div>
             <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-text-primary font-sans">
               Access the private <span className="serif-italic font-normal">archive</span> early.
             </h3>
             <p className="text-xs sm:text-sm text-text-secondary mt-2 font-light">
-              Receive confidential lookbooks, private salon invitations, and limited serial allocations before global unveilings.
+              Receive new collection drops, member lookbooks, and islandwide seasonal release notices before global unveilings.
             </p>
           </div>
 
@@ -53,31 +55,31 @@ export const Footer = () => {
             ) : (
               <div className="p-4 rounded-xl bg-surface border border-border-default text-text-primary text-xs font-mono flex items-center gap-2">
                 <Check className="w-4 h-4 shrink-0" />
-                <span>CONFIRMED: VIP Capsule Access Granted for {email}</span>
+                <span>CONFIRMED: Access Granted for {email}</span>
               </div>
             )}
           </div>
         </div>
       </div>
 
-      {/* 3-Part Swiss Editorial Footer */}
+      {/* 3-Part Editorial Footer */}
       <div className="max-w-editorial mx-auto px-4 sm:px-8 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-border-default text-xs">
           
           {/* Part 1: Brand Philosophy & Monogram */}
           <div className="md:col-span-5 space-y-4">
             <div className="font-black text-xl uppercase tracking-tight flex items-center gap-2 font-sans">
-              <span>DAIZY CLOTHING</span>
+              <span>{activeBrand.name}</span>
               <span className="text-text-muted font-normal text-xs">™</span>
             </div>
             <p className="text-text-secondary font-light max-w-sm leading-relaxed">
-              Modern women’s boutique specializing in export-quality, eco-conscious styles. Timeless, architectural fashion curated for the contemporary woman.
+              {activeBrand.description}
             </p>
             
             {/* Social Media Links */}
-            <div className="flex items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-2.5 pt-1">
               <a
-                href="https://www.instagram.com/daizy_clothing/"
+                href={activeBrand.social.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-1.5 rounded-full bg-surface-subtle hover:bg-pill border border-border-default text-text-primary text-[11px] font-mono font-bold flex items-center gap-1.5 transition-all hover:scale-105"
@@ -86,7 +88,7 @@ export const Footer = () => {
                 <ArrowUpRight className="w-3 h-3" />
               </a>
               <a
-                href="https://www.facebook.com/p/Daizy-Clothing-61587159035933/"
+                href={activeBrand.social.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-1.5 rounded-full bg-surface-subtle hover:bg-pill border border-border-default text-text-primary text-[11px] font-mono font-bold flex items-center gap-1.5 transition-all hover:scale-105"
@@ -95,12 +97,12 @@ export const Footer = () => {
                 <ArrowUpRight className="w-3 h-3" />
               </a>
               <a
-                href="https://chat.whatsapp.com/GQv2J7psMR1Gvt5mfWW9Zq?mode=gi_t&utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+                href={activeBrand.social.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-1.5 rounded-full bg-emerald-600/10 hover:bg-emerald-600/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-mono font-bold flex items-center gap-1.5 transition-all hover:scale-105"
               >
-                <span>WhatsApp VIP</span>
+                <span>WhatsApp</span>
                 <ArrowUpRight className="w-3 h-3" />
               </a>
             </div>
@@ -111,7 +113,7 @@ export const Footer = () => {
                 className="mono-telemetry text-[10px] text-text-primary hover:underline flex items-center gap-1.5"
               >
                 <MapPin className="w-3 h-3 text-text-muted" />
-                <span>AMBALANGODA • COLOMBO • SRI LANKA</span>
+                <span>{activeBrand.address}</span>
               </button>
             </div>
           </div>
@@ -121,21 +123,21 @@ export const Footer = () => {
             <div className="mono-telemetry text-text-muted pb-1">CLIENT SERVICES</div>
             <ul className="space-y-2 text-text-secondary">
               <li><a href="#lookbook" className="hover:text-text-primary transition-colors">Seasonal Lookbook (20)</a></li>
-              <li><a href="https://share.google/nVvyg95wPf7E5xkEv" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors flex items-center gap-1"><span>Catalog Drive Archive</span><ArrowUpRight className="w-3 h-3" /></a></li>
-              <li><a href="https://chat.whatsapp.com/GQv2J7psMR1Gvt5mfWW9Zq?mode=gi_t&utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors flex items-center gap-1"><span>WhatsApp Community</span><ArrowUpRight className="w-3 h-3" /></a></li>
-              <li><a href="#lookbook" className="hover:text-text-primary transition-colors">Islandwide Courier & Delivery</a></li>
-              <li><span className="text-text-muted">30-Day Exchange Guarantee</span></li>
+              <li><a href={activeBrand.social.catalogDriveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors flex items-center gap-1"><span>Catalog Drive Archive</span><ArrowUpRight className="w-3 h-3" /></a></li>
+              <li><a href={activeBrand.social.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-text-primary transition-colors flex items-center gap-1"><span>{activeBrand.social.whatsappText}</span><ArrowUpRight className="w-3 h-3" /></a></li>
+              <li><a href="#lookbook" className="hover:text-text-primary transition-colors">Islandwide Courier & COD Delivery</a></li>
+              <li><span className="text-text-muted">Exchange Guarantee</span></li>
             </ul>
           </div>
 
           {/* Part 3: Boutique Standards */}
           <div className="md:col-span-4 space-y-2.5">
-            <div className="mono-telemetry text-text-muted pb-1">BOUTIQUE PHILOSOPHY</div>
+            <div className="mono-telemetry text-text-muted pb-1">STORE ESSENCE</div>
             <p className="text-text-secondary font-light leading-relaxed">
-              Export-grade craftsmanship engineered with botanical dyes, long-staple natural fibers, and sustainable zero-waste cutting algorithms.
+              Export-grade craftsmanship engineered with botanical dyes, long-staple natural fibers, and contemporary tailored fits.
             </p>
             <div className="pt-2 text-text-muted mono-telemetry text-[10px]">
-              DAIZY CLOTHING SRI LANKA • BOUTIQUE AT AMBALANGODA
+              {activeBrand.name} SRI LANKA • FLAGSHIP AMBALANGODA
             </div>
           </div>
 
@@ -144,7 +146,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
           <div className="mono-telemetry text-[10px] flex items-center gap-2">
-            <span>© 2026 DAIZY CLOTHING. ALL RIGHTS RESERVED.</span>
+            <span>© 2026 {activeBrand.name}. ALL RIGHTS RESERVED.</span>
             <span>•</span>
             <span className="text-emerald-600 dark:text-emerald-400 font-bold">SAMPLE PREVIEW BY AXION SOLUTIONS</span>
           </div>

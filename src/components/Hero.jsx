@@ -1,7 +1,10 @@
 import React from 'react';
+import { useBrand } from '../context/BrandContext';
 import { ArrowUpRight } from 'lucide-react';
 
 export const Hero = () => {
+  const { activeBrand } = useBrand();
+
   const scrollToCollection = () => {
     const el = document.getElementById('lookbook');
     if (el) {
@@ -19,22 +22,22 @@ export const Hero = () => {
           className="relative w-full rounded-3xl border border-border-default bg-surface transition-colors duration-500 overflow-hidden min-h-[640px] sm:min-h-[720px] lg:min-h-[820px] flex flex-col justify-between p-4 sm:p-10 lg:p-12 shadow-sm animate-fade-in"
         >
           
-          {/* Top Section: Split Background Words (DAIZY on Left, CLOTHING on Right) */}
+          {/* Top Section: Split Background Words */}
           <div className="absolute inset-x-0 top-[20%] sm:top-[26%] lg:top-[32%] flex items-center justify-between px-3 sm:px-10 md:px-14 lg:px-20 pointer-events-none select-none z-0">
-            {/* Left Word: DAIZY */}
+            {/* Left Word */}
             <span 
               className="text-[#0A0A0A] dark:text-white font-black tracking-[-0.04em] uppercase font-sans leading-none opacity-95 transition-transform duration-700"
-              style={{ fontSize: 'clamp(32px, 8vw, 130px)' }}
+              style={{ fontSize: 'clamp(28px, 7.5vw, 125px)' }}
             >
-              DAIZY
+              {activeBrand.heroSplit[0]}
             </span>
 
-            {/* Right Word: CLOTHING */}
+            {/* Right Word */}
             <span 
               className="text-[#0A0A0A] dark:text-white font-black tracking-[-0.04em] uppercase font-sans leading-none opacity-95 transition-transform duration-700 text-right"
               style={{ fontSize: 'clamp(24px, 6.5vw, 105px)' }}
             >
-              CLOTHING
+              {activeBrand.heroSplit[1]}
             </span>
           </div>
 

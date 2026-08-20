@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
+import { BrandProvider } from './context/BrandContext';
 import { Preloader } from './components/Preloader';
 import { SampleWatermarkBanner } from './components/SampleWatermarkBanner';
 import { Navbar } from './components/Navbar';
@@ -38,7 +39,7 @@ export const MainContent = () => {
       {/* Subtle Film Grain Paper Texture */}
       <div className="grain-overlay" />
 
-      {/* Axion Solutions Minimal Watermark Banner */}
+      {/* Axion Solutions Minimal Watermark Banner with Live Brand Switcher */}
       <SampleWatermarkBanner />
 
       {/* Editorial Intro Loading Screen */}
@@ -74,7 +75,7 @@ export const MainContent = () => {
             {/* 4. 4-Column Service Assurance / Trust Markers */}
             <TrustBar />
 
-            {/* 5. "BEST OF NOIRE" 20-Piece Luxury Clothing Catalog Grid */}
+            {/* 5. 20-Piece Luxury Clothing Catalog Grid */}
             <LookbookGrid 
               activeCategory={activeCategory} 
               setActiveCategory={setActiveCategory}
@@ -102,9 +103,11 @@ export const MainContent = () => {
 export default function App() {
   return (
     <ThemeProvider>
-      <CartProvider>
-        <MainContent />
-      </CartProvider>
+      <BrandProvider>
+        <CartProvider>
+          <MainContent />
+        </CartProvider>
+      </BrandProvider>
     </ThemeProvider>
   );
 }

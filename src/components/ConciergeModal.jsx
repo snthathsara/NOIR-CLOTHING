@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
-import { atelierLocations } from '../data/atelierData';
+import { useBrand } from '../context/BrandContext';
 import { X, MapPin, Calendar, Clock, Check, Sparkles, User, Mail, Compass } from 'lucide-react';
 
 export const ConciergeModal = () => {
   const { isConciergeOpen, setIsConciergeOpen } = useCart();
-  const [selectedCity, setSelectedCity] = useState(atelierLocations[0]);
+  const { activeBrand } = useBrand();
+  const [selectedCity, setSelectedCity] = useState(activeBrand.locations[0]);
   const [isBooked, setIsBooked] = useState(false);
-  const [name, setName] = useState('Lord Julian Sterling');
+  const [name, setName] = useState('Client Guest');
   const [date, setDate] = useState('2026-09-15');
+
+  useEffect(() => {
+    if (activeBrand.locations && activeBrand.locations.length > 0) {
+      setSelectedCity(activeBrand.locations[0]);
+    }
+  }, [activeBrand]);
 
   if (!isConciergeOpen) return null;
 
@@ -39,20 +46,20 @@ export const ConciergeModal = () => {
         {!isBooked ? (
           <div className="space-y-6">
             <div>
-              <div className="mono-telemetry text-text-muted mb-1">VIP ATELIER CONCIERGE</div>
+              <div className="mono-telemetry text-text-muted mb-1">{activeBrand.name} • CLIENT CONCIERGE</div>
               <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-text-primary">
-                Book Private Salon Consultation
+                Book Boutique Fitting Consultation
               </h3>
               <p className="text-xs sm:text-sm text-text-secondary mt-1 font-light">
-                Experience bespoke fitting, material tactile review, and private champagne tailoring in our global ateliers.
+                Experience tailored fitting, material review, and personalized style curation at our boutiques.
               </p>
             </div>
 
             {/* City Selection Pills */}
             <div>
-              <span className="mono-telemetry text-[10px] text-text-muted block mb-2">SELECT GLOBAL ATELIER VAULT</span>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                {atelierLocations.map((loc) => (
+              <span className="mono-telemetry text-[10px] text-text-muted block mb-2">SELECT STORE LOCATION</span>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                {activeBrand.locations.map((loc) => (
                   <button
                     key={loc.city}
                     onClick={() => setSelectedCity(loc)}
@@ -116,12 +123,12 @@ export const ConciergeModal = () => {
                 </button>
 
                 <a
-                  href="https://chat.whatsapp.com/GQv2J7psMR1Gvt5mfWW9Zq?mode=gi_t&utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+                  href={activeBrand.social.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md active:scale-95"
                 >
-                  <span>Join Our WhatsApp Group</span>
+                  <span>{activeBrand.social.whatsappText}</span>
                 </a>
               </div>
             </form>
