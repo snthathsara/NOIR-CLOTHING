@@ -390,8 +390,8 @@ export const CheckoutModal = () => {
                 className="p-3.5 rounded-xl bg-surface-subtle border border-border-default flex items-center justify-between hover:bg-pill transition-colors text-text-primary block"
               >
                 <div>
-                  <span className="font-bold block">WhatsApp VIP Community</span>
-                  <span className="text-[11px] text-text-muted">Instant Order Dispatch & Inquiries</span>
+                  <span className="font-bold block">Join Our WhatsApp Group</span>
+                  <span className="text-[11px] text-text-muted">Instant Order Confirmation & Drops</span>
                 </div>
                 <span className="text-[10px] font-bold px-2 py-1 rounded bg-emerald-600 text-white">WHATSAPP</span>
               </a>

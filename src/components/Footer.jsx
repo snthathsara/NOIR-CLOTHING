@@ -143,14 +143,16 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
-          <div className="mono-telemetry text-[10px]">
-            © 2026 DAIZY CLOTHING. ALL RIGHTS RESERVED.
+          <div className="mono-telemetry text-[10px] flex items-center gap-2">
+            <span>© 2026 DAIZY CLOTHING. ALL RIGHTS RESERVED.</span>
+            <span>•</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold">SAMPLE PREVIEW BY AXION SOLUTIONS</span>
           </div>
 
           <div className="flex items-center gap-6 mono-telemetry text-[10px]">
             <a href="#lookbook" className="hover:text-text-primary transition-colors">LEGAL NOTICE</a>
             <a href="#lookbook" className="hover:text-text-primary transition-colors">PRIVACY PROTOCOL</a>
-            <a href="#craftsmanship" className="hover:text-text-primary transition-colors">SWISS MINIMALISM</a>
+            <a href="#lookbook" className="hover:text-text-primary transition-colors">EXPORT QUALITY</a>
           </div>
         </div>
 

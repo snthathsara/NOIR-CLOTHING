@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
 import { Preloader } from './components/Preloader';
+import { SampleWatermarkBanner } from './components/SampleWatermarkBanner';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CategoryFeatureBar } from './components/CategoryFeatureBar';
@@ -14,7 +15,7 @@ import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
 import { ConciergeModal } from './components/ConciergeModal';
 import { ToastNotification } from './components/ToastNotification';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { FloatingChatHub } from './components/FloatingChatHub';
 import { Footer } from './components/Footer';
 
 export const MainContent = () => {
@@ -36,6 +37,9 @@ export const MainContent = () => {
       
       {/* Subtle Film Grain Paper Texture */}
       <div className="grain-overlay" />
+
+      {/* Axion Solutions Minimal Watermark Banner */}
+      <SampleWatermarkBanner />
 
       {/* Editorial Intro Loading Screen */}
       {isLoading && <Preloader onFinish={() => setIsLoading(false)} />}
@@ -89,7 +93,7 @@ export const MainContent = () => {
       <CheckoutModal />
       <ConciergeModal />
       <ToastNotification />
-      <FloatingWhatsApp />
+      <FloatingChatHub />
 
     </div>
   );

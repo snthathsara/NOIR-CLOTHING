@@ -121,7 +121,7 @@ export const ConciergeModal = () => {
                   rel="noopener noreferrer"
                   className="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md active:scale-95"
                 >
-                  <span>Direct WhatsApp VIP Assistance</span>
+                  <span>Join Our WhatsApp Group</span>
                 </a>
               </div>
             </form>

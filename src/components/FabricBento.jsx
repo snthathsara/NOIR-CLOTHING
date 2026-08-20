@@ -32,7 +32,7 @@ export const FabricBento = () => {
           </h2>
         </div>
         <p className="text-sm text-text-secondary max-w-md font-light">
-          Three pillars of Swiss architectural minimalism applied to bespoke Italian tailoring.
+          Three pillars of export-grade craftsmanship, botanical fibers, and tailored boutique elegance.
         </p>
       </div>
 

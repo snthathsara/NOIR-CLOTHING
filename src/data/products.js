@@ -225,7 +225,7 @@ export const products = [
     description: 'Precision-cropped to sit at the natural high waistline. Crafted from ultra-supple Tuscan lambskin that drapes with the fluidity of heavy silk.',
     craftDetails: [
       '0.7mm skived Nappa leather with semi-matte aniline finish',
-      'Swiss Raccagni symmetrical metallic zips on front and cuffs',
+      'Precision symmetrical metallic zips on front and cuffs',
       'Reinforced shoulder pads for structured sharp silhouette',
       'Interior glove leather facing and silk twill lining'
     ],
@@ -547,7 +547,7 @@ export const products = [
     featured: false,
     color: 'Monochrome Line Art',
     colorHex: '#F0EEE8',
-    description: 'Screen-printed by historic Como artisans with blueprint line art depicting architectural column proportions and Swiss modernist geometric vectors.',
+    description: 'Screen-printed by historic textile artisans with blueprint line art depicting architectural column proportions and modernist geometric vectors.',
     craftDetails: [
       'Traditional wet-screen printing with 6-color pigment pass',
       'Artisanal hand-rolled and hand-stitched roulotté hems (4 stitches/cm)',
