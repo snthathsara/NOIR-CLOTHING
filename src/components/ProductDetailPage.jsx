@@ -162,7 +162,7 @@ export const ProductDetailPage = ({ product, onBack, onSelectProduct }) => {
             <div className="space-y-3">
               <div className="flex items-center justify-between text-xs font-mono">
                 <span className="font-bold text-text-primary uppercase tracking-wider">Select Size</span>
-                <span className="text-text-muted text-[11px]">Model is 188cm wearing M</span>
+                <span className="text-text-muted text-[11px]">Model is 178cm wearing S</span>
               </div>
 
               <div className="grid grid-cols-4 gap-2.5">

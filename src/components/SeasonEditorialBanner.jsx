@@ -39,8 +39,8 @@ export const SeasonEditorialBanner = () => {
         {/* Right Column: Close-up High-Fashion Model Portrait */}
         <div className="lg:col-span-6 h-[320px] sm:h-[420px] lg:h-[460px] rounded-xl overflow-hidden bg-neutral-900 shadow-xl relative">
           <img
-            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=85"
-            alt="DAIZY CLOTHING New Season Editorial Model"
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85"
+            alt="DAIZY CLOTHING Women's Runway Editorial Model"
             className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

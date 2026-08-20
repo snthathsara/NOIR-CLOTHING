@@ -20,7 +20,7 @@ export const Hero = () => {
         >
           
           {/* Top Section: Split Background Words (DAIZY on Left, CLOTHING on Right) */}
-          <div className="absolute inset-x-0 top-[22%] sm:top-[28%] lg:top-[34%] flex items-center justify-between px-3 sm:px-10 md:px-14 lg:px-20 pointer-events-none select-none z-0">
+          <div className="absolute inset-x-0 top-[20%] sm:top-[26%] lg:top-[32%] flex items-center justify-between px-3 sm:px-10 md:px-14 lg:px-20 pointer-events-none select-none z-0">
             {/* Left Word: DAIZY */}
             <span 
               className="text-[#0A0A0A] dark:text-white font-black tracking-[-0.04em] uppercase font-sans leading-none opacity-95 transition-transform duration-700"
@@ -38,14 +38,14 @@ export const Hero = () => {
             </span>
           </div>
 
-          {/* Centered Masked Streetwear Cutout Model (Positioned cleanly more UPWARDS with ample bottom spacing) */}
-          <div className="relative z-10 w-full max-w-[210px] sm:max-w-[300px] md:max-w-[360px] lg:max-w-[420px] h-[380px] sm:h-[480px] md:h-[580px] lg:h-[680px] flex items-end justify-center pointer-events-none animate-fade-in-up mx-auto pt-2 sm:pt-4">
+          {/* Centered Luxury Womenswear Haute Couture Cutout Model (Positioned with Ample Clearances) */}
+          <div className="relative z-10 w-full max-w-[220px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[440px] h-[390px] sm:h-[500px] md:h-[600px] lg:h-[700px] flex items-end justify-center pointer-events-none animate-fade-in-up mx-auto pt-2 sm:pt-4">
             {/* Soft Ground Floor Shadow */}
             <div className="absolute bottom-2 w-40 sm:w-60 md:w-72 h-5 sm:h-6 bg-black/20 dark:bg-black/80 blur-xl rounded-full transform scale-y-50 pointer-events-none" />
 
             <img
-              src="/cutouts/streetwear-model.png"
-              alt="DAIZY CLOTHING Streetwear Tracksuit Cutout Silhouette"
+              src="/cutouts/women-hero-model.png"
+              alt="DAIZY CLOTHING Luxury Womenswear Trench Silhouette"
               className="h-full w-auto object-contain object-bottom drop-shadow-2xl transition-transform duration-700 hover:scale-[1.02] pointer-events-auto"
               style={{
                 filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.12))'
@@ -68,9 +68,9 @@ export const Hero = () => {
                 Clothes without excess. Only style.
               </h2>
 
-              {/* Editorial Subtext (Hidden on ultra-small mobile, visible on tablet/desktop) */}
+              {/* Editorial Subtext */}
               <p className="hidden sm:block text-xs sm:text-sm text-text-secondary font-mono leading-relaxed max-w-xs sm:max-w-sm">
-                Modern silhouettes, natural fabrics, and honest design. For those who choose simplicity and quality.
+                Architectural women's silhouettes, double-faced cashmere, and sculptural silk draping.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ export const Hero = () => {
               >
                 <div className="w-full h-16 sm:h-24 md:h-32 rounded-xl overflow-hidden bg-transparent mb-1 sm:mb-2 flex items-center justify-center p-0.5 sm:p-1">
                   <img
-                    src="/cutouts/puffer-preview.png"
+                    src="/cutouts/women-blazer-preview.png"
                     alt="New Collection Preview"
                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-md"
                   />

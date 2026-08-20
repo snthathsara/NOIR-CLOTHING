@@ -124,7 +124,7 @@ export const EditorialSplit = () => {
                 </div>
 
                 <div className="bg-[#081710]/80 backdrop-blur-md px-3 py-1 rounded-full border border-emerald-500/20 text-emerald-200 mono-telemetry text-[10px]">
-                  MODEL: 188CM / SIZE M
+                  MODEL: 178CM / SIZE S
                 </div>
               </div>
 

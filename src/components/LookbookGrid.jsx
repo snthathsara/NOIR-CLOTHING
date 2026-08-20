@@ -161,12 +161,12 @@ export const LookbookGrid = ({ activeCategory, setActiveCategory, onSelectProduc
   };
 
   const categories = [
-    { id: 'all', label: 'All Items', count: products.length },
-    { id: 'outerwear', label: 'Men / Outerwear', count: products.filter(p => p.category === 'outerwear').length },
-    { id: 'silhouettes', label: 'Women / Gowns', count: products.filter(p => p.category === 'silhouettes').length },
-    { id: 'tailoring', label: 'Tailoring & Pants', count: products.filter(p => p.category === 'tailoring').length },
-    { id: 'knitwear', label: 'Knitwear & Layering', count: products.filter(p => p.category === 'knitwear').length },
-    { id: 'accessories', label: 'Accessories & Leather', count: products.filter(p => p.category === 'accessories').length },
+    { id: 'all', label: 'All Pieces', count: products.length },
+    { id: 'silhouettes', label: 'Dresses & Gowns', count: products.filter(p => p.category === 'silhouettes').length },
+    { id: 'outerwear', label: 'Coats & Outerwear', count: products.filter(p => p.category === 'outerwear').length },
+    { id: 'tailoring', label: 'Tailoring & Suiting', count: products.filter(p => p.category === 'tailoring').length },
+    { id: 'knitwear', label: 'Knitwear & Tops', count: products.filter(p => p.category === 'knitwear').length },
+    { id: 'accessories', label: 'Leather & Accessories', count: products.filter(p => p.category === 'accessories').length },
   ];
 
   const filteredAndSortedProducts = useMemo(() => {
@@ -217,13 +217,13 @@ export const LookbookGrid = ({ activeCategory, setActiveCategory, onSelectProduc
         <div>
           <div className="mono-telemetry text-text-muted mb-2 flex items-center gap-2">
             <Sparkles className="w-3 h-3" />
-            <span>SEASONAL CAPSULE CATALOG • 20 PIECES</span>
+            <span>WOMEN'S AUTUMN & WINTER 2026 • 20 PIECES</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-text-primary font-sans">
             Curated Archive
           </h2>
           <p className="text-xs sm:text-sm text-text-secondary mt-2 max-w-md font-light">
-            Architectural silhouettes cut from custom-milled Italian cashmere, virgin wool, Skived Nappa leather, and engineered technical twill.
+            Architectural women's silhouettes cut from custom-milled Italian cashmere, mulberry silk charmeuse, virgin wool, and buttery Tuscan Nappa leather.
           </p>
         </div>
 

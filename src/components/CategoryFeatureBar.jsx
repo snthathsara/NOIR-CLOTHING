@@ -4,26 +4,26 @@ import { ArrowRight } from 'lucide-react';
 export const CategoryFeatureBar = ({ onSelectCategory }) => {
   const features = [
     {
-      title: 'MEN',
-      sub: 'Elevated architectural essentials.',
-      cta: 'SHOP MEN →',
-      category: 'outerwear',
-      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=85'
-    },
-    {
-      title: 'WOMEN',
-      sub: 'Sculptural silhouettes for every form.',
-      cta: 'SHOP WOMEN →',
+      title: 'DRESSES & GOWNS',
+      sub: 'Sculptural drapery & evening silhouettes.',
+      cta: 'EXPLORE GOWNS →',
       category: 'silhouettes',
-      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=85'
+      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=85'
     },
     {
-      title: 'ATELIER',
-      sub: 'Master-tailored bespoke commissions.',
+      title: 'TAILORING & COATS',
+      sub: 'Architectural double-faced cashmere outerwear.',
+      cta: 'SHOP TAILORING →',
+      category: 'outerwear',
+      image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=85'
+    },
+    {
+      title: 'HAUTE ATELIER',
+      sub: 'Bespoke couture commissions for private clients.',
       cta: 'COMMISSION PIECE →',
       category: 'all',
       targetId: 'configurator',
-      image: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=400&q=85'
+      image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=85'
     }
   ];
 

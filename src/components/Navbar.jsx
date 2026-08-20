@@ -23,7 +23,8 @@ export const Navbar = ({ onSelectCategory, onNavigateHome }) => {
 
   const navLinks = [
     { label: 'main', category: 'all', targetId: 'hero' },
-    { label: 'shop', category: 'all', targetId: 'lookbook' },
+    { label: 'collection', category: 'all', targetId: 'lookbook' },
+    { label: 'dresses', category: 'silhouettes', targetId: 'lookbook' },
     { label: 'outerwear', category: 'outerwear', targetId: 'lookbook' },
     { label: 'tailoring', category: 'tailoring', targetId: 'lookbook' },
     { label: 'knitwear', category: 'knitwear', targetId: 'lookbook' },
