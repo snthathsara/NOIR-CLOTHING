@@ -130,7 +130,7 @@ const ScrollRevealProductCard = ({ product, idx, onSelectProduct, selectedSize, 
 
         <div className="flex items-baseline justify-between pt-4 mt-3 hairline-t">
           <span className="text-base sm:text-lg font-black font-mono text-text-primary">
-            ${product.price.toLocaleString()}
+            LKR {product.price.toLocaleString()}
           </span>
           
           <button

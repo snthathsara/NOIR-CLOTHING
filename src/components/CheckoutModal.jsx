@@ -177,7 +177,7 @@ export const CheckoutModal = () => {
                   <span className="truncate pr-4 text-text-primary">
                     {item.name} <strong className="text-text-muted">[Size {item.size}]</strong> x{item.quantity}
                   </span>
-                  <span className="font-bold text-text-primary shrink-0">${(item.price * item.quantity).toLocaleString()}</span>
+                  <span className="font-bold text-text-primary shrink-0">LKR {(item.price * item.quantity).toLocaleString()}</span>
                 </div>
               ))}
             </div>
@@ -186,7 +186,7 @@ export const CheckoutModal = () => {
             <div className="pt-4 border-t border-border-default flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <div className="mono-telemetry text-[10px] text-text-muted">TOTAL INVESTMENT</div>
-                <div className="text-2xl font-black font-mono text-text-primary">${total.toLocaleString()}</div>
+                <div className="text-2xl font-black font-mono text-text-primary">LKR {total.toLocaleString()}</div>
               </div>
 
               <button
@@ -268,31 +268,31 @@ export const CheckoutModal = () => {
                       {item.name} <strong className="font-mono text-text-muted text-[10px]">[Size {item.size}]</strong>
                     </span>
                     <span className="w-12 text-center">{item.quantity}</span>
-                    <span className="w-24 text-right">${item.price.toLocaleString()}</span>
-                    <span className="w-24 text-right font-bold">${(item.price * item.quantity).toLocaleString()}</span>
+                    <span className="w-28 text-right font-mono">LKR {item.price.toLocaleString()}</span>
+                    <span className="w-28 text-right font-bold font-mono">LKR {(item.price * item.quantity).toLocaleString()}</span>
                   </div>
                 ))}
               </div>
 
               {/* Totals Breakdown */}
               <div className="pt-2 flex flex-col items-end space-y-1.5 text-xs">
-                <div className="flex justify-between w-64 text-text-secondary">
+                <div className="flex justify-between w-72 text-text-secondary">
                   <span>Subtotal:</span>
-                  <span className="font-bold text-text-primary">${rawSubtotal.toLocaleString()}</span>
+                  <span className="font-bold font-mono text-text-primary">LKR {rawSubtotal.toLocaleString()}</span>
                 </div>
                 {discountAmount > 0 && (
-                  <div className="flex justify-between w-64 text-text-primary">
+                  <div className="flex justify-between w-72 text-text-primary font-mono">
                     <span>Privilege Discount:</span>
-                    <span>-${discountAmount.toLocaleString()}</span>
+                    <span>-LKR {discountAmount.toLocaleString()}</span>
                   </div>
                 )}
-                <div className="flex justify-between w-64 text-text-secondary">
-                  <span>Worldwide Courier:</span>
-                  <span className="text-text-primary">{shippingFee === 0 ? 'Complimentary' : `$${shippingFee}`}</span>
+                <div className="flex justify-between w-72 text-text-secondary">
+                  <span>Islandwide Delivery:</span>
+                  <span className="text-text-primary font-mono">{shippingFee === 0 ? 'Free Delivery' : `LKR ${shippingFee.toLocaleString()}`}</span>
                 </div>
-                <div className="flex justify-between w-64 text-sm font-bold pt-2 border-t border-border-default text-text-primary">
+                <div className="flex justify-between w-72 text-sm font-bold pt-2 border-t border-border-default text-text-primary font-mono">
                   <span>Total Quotation Sum:</span>
-                  <span className="text-base">${total.toLocaleString()} USD</span>
+                  <span className="text-base font-black">LKR {total.toLocaleString()}</span>
                 </div>
               </div>
 

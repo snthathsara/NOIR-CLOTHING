@@ -111,7 +111,7 @@ export const bespokeConfiguratorData = {
     {
       id: 'sil-gown',
       name: 'Architectural Column Evening Gown',
-      basePrice: 1850,
+      basePrice: 14500,
       leadTime: '3-4 Weeks',
       category: 'Haute Runway Gowns',
       description: 'Sculptural heavy silk crepe column silhouette with geometric open back and floor sweep.',
@@ -120,25 +120,25 @@ export const bespokeConfiguratorData = {
     {
       id: 'sil-blazer',
       name: 'The Sculpted Hourglass Blazer',
-      basePrice: 1380,
+      basePrice: 9800,
       leadTime: '2-3 Weeks',
       category: 'Precision Tailoring',
       description: 'Cinched-waist architectural jacket with floating canvas construction and Milanese buttonholes.',
-      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85'
+      image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85'
     },
     {
       id: 'sil-overcoat',
       name: 'The Double-Faced Cashmere Trench',
-      basePrice: 1950,
+      basePrice: 16500,
       leadTime: '4-5 Weeks',
       category: 'Full-Length Outerwear',
       description: 'Full-length double-faced cashmere coat with belted waist and hand-split seams.',
-      image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=85'
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=85'
     },
     {
       id: 'sil-trousers',
       name: 'The Silk-Wool Palazzo Trouser',
-      basePrice: 820,
+      basePrice: 5900,
       leadTime: '2-3 Weeks',
       category: 'Atelier Suiting',
       description: 'High-waisted double-pleated trousers in Italian virgin wool-silk twill.',
@@ -158,7 +158,7 @@ export const bespokeConfiguratorData = {
       id: 'fab-mulberry-silk',
       name: 'Como Heavyweight Silk Charmeuse (22mm)',
       sub: '95 GSM Liquid Drape',
-      priceModifier: 150,
+      priceModifier: 1500,
       origin: 'Lake Como, Italy',
       colorCode: '#1A1A1A'
     },
@@ -166,7 +166,7 @@ export const bespokeConfiguratorData = {
       id: 'fab-virgin-wool',
       name: 'Super 140s Sculptural Virgin Wool',
       sub: '360 GSM Fine Gabardine',
-      priceModifier: -120,
+      priceModifier: -800,
       origin: 'Biella, Italy',
       colorCode: '#141414'
     },
@@ -174,7 +174,7 @@ export const bespokeConfiguratorData = {
       id: 'fab-nappa-leather',
       name: 'Skived Italian Lamb Nappa Leather',
       sub: '0.7mm Featherweight Nappa',
-      priceModifier: 550,
+      priceModifier: 3500,
       origin: 'Santa Croce, Florence',
       colorCode: '#080808'
     }
@@ -189,55 +189,55 @@ export const bespokeConfiguratorData = {
     {
       id: 'hw-titanium',
       name: 'Concealed Titanium PVD Snaps',
-      priceModifier: 95,
+      priceModifier: 950,
       desc: 'Aerospace Grade-5 titanium with stealth dark PVD vapor deposition.'
     },
     {
       id: 'hw-magnetic',
       name: 'Neodymium Seamless Magnet Placket',
-      priceModifier: 140,
+      priceModifier: 1200,
       desc: 'Hermetically sealed 6-point magnetic closures for a completely clean facade.'
     }
   ],
   sizingAdjustments: [
     { id: 'standard', label: 'Standard Atelier Proportion (0 cm)', modifier: 0, price: 0 },
-    { id: 'tall-sleeve', label: 'Extended Sleeve (+2.5 cm)', modifier: 2.5, price: 50 },
-    { id: 'long-torso', label: 'Extended Body Length (+4.0 cm)', modifier: 4.0, price: 80 },
-    { id: 'custom-bespoke', label: 'Full Bespoke In-Person Fitting', modifier: 0, price: 250 }
+    { id: 'tall-sleeve', label: 'Extended Sleeve (+2.5 cm)', modifier: 2.5, price: 450 },
+    { id: 'long-torso', label: 'Extended Body Length (+4.0 cm)', modifier: 4.0, price: 650 },
+    { id: 'custom-bespoke', label: 'Full Bespoke In-Person Fitting', modifier: 0, price: 1500 }
   ]
 };
 
 export const atelierLocations = [
   {
-    city: 'MILANO',
-    name: 'Flagship Atelier & Vault',
-    address: 'Via Montenapoleone 14, 20121 Milano MI, Italy',
-    hours: 'Mon — Sat: 10:00 — 19:30 CET (Private Appointment Only)',
-    telemetry: 'LAT 45.4697° N, LON 9.1970° E',
+    city: 'COLOMBO',
+    name: 'Flagship Atelier & Private Vault',
+    address: 'No. 42 Ward Place, Colombo 07, Sri Lanka',
+    hours: 'Mon — Sat: 10:00 — 19:30 IST (Private Appointment Available)',
+    telemetry: 'LAT 6.9147° N, LON 79.8732° E',
     leadTailor: 'Directrice Francesca De Luca'
   },
   {
-    city: 'PARIS',
-    name: 'Place Vendôme Private Salon',
-    address: '8 Place Vendôme, 75001 Paris, France',
-    hours: 'Tue — Sat: 11:00 — 19:00 CET',
-    telemetry: 'LAT 48.8675° N, LON 2.3294° E',
-    leadTailor: 'Directrice Hélène Laurent'
+    city: 'KANDY',
+    name: 'Hill Country Sanctuary',
+    address: '18 Victoria Drive, Kandy, Sri Lanka',
+    hours: 'Tue — Sat: 11:00 — 19:00 IST',
+    telemetry: 'LAT 7.2906° N, LON 80.6337° E',
+    leadTailor: 'Artisan Julian Sterling'
   },
   {
-    city: 'TOKYO',
-    name: 'Ginza Tectonic Archive',
-    address: '6-10-1 Ginza, Chuo City, Tokyo 104-0061, Japan',
-    hours: 'Wed — Sun: 11:00 — 20:00 JST',
-    telemetry: 'LAT 35.6719° N, LON 139.7640° E',
+    city: 'GALLE',
+    name: 'Galle Fort Heritage Studio',
+    address: '24 Church Street, Galle Fort 80000, Sri Lanka',
+    hours: 'Wed — Sun: 11:00 — 20:00 IST',
+    telemetry: 'LAT 6.0270° N, LON 80.2170° E',
     leadTailor: 'Master Emi Takahashi'
   },
   {
-    city: 'NEW YORK',
-    name: 'SoHo Cast Iron Studio',
-    address: '92 Mercer Street, New York, NY 10012, USA',
-    hours: 'Mon — Sat: 11:00 — 19:00 EST',
-    telemetry: 'LAT 40.7225° N, LON 73.9982° W',
-    leadTailor: 'Artisan Julian Sterling'
+    city: 'MILANO',
+    name: 'Milan International Archive',
+    address: 'Via Montenapoleone 14, 20121 Milano MI, Italy',
+    hours: 'Mon — Sat: 10:00 — 19:30 CET',
+    telemetry: 'LAT 45.4697° N, LON 9.1970° E',
+    leadTailor: 'Directrice Hélène Laurent'
   }
 ];

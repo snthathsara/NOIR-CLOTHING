@@ -81,10 +81,10 @@ export const CartDrawer = () => {
               <span className="text-text-secondary">
                 {subtotal >= shippingThreshold ? (
                   <span className="font-semibold text-text-primary flex items-center gap-1">
-                    Complimentary VIP Express Unlocked
+                    Free Islandwide Delivery Unlocked
                   </span>
                 ) : (
-                  <span>Add <strong className="text-text-primary font-mono">${shippingThreshold - subtotal}</strong> for Free Courier</span>
+                  <span>Add <strong className="text-text-primary font-mono">LKR {(shippingThreshold - subtotal).toLocaleString()}</strong> for Free Delivery</span>
                 )}
               </span>
               <span className="text-text-muted text-[10px]">{progressPercent}%</span>
@@ -141,7 +141,7 @@ export const CartDrawer = () => {
                       {item.name}
                     </h4>
                     <div className="text-xs font-black font-mono text-text-primary mt-1">
-                      ${(item.price * item.quantity).toLocaleString()}
+                      LKR {(item.price * item.quantity).toLocaleString()}
                     </div>
 
                     {/* Quantity Controls */}
@@ -229,23 +229,23 @@ export const CartDrawer = () => {
               <div className="space-y-1.5 text-xs">
                 <div className="flex justify-between text-text-secondary">
                   <span>Archive Subtotal</span>
-                  <span className="font-mono text-text-primary">${rawSubtotal.toLocaleString()}</span>
+                  <span className="font-mono text-text-primary">LKR {rawSubtotal.toLocaleString()}</span>
                 </div>
                 {discountAmount > 0 && (
                   <div className="flex justify-between text-text-primary font-mono">
                     <span>VIP Privilege Discount</span>
-                    <span>-${discountAmount.toLocaleString()}</span>
+                    <span>-LKR {discountAmount.toLocaleString()}</span>
                   </div>
                 )}
                 <div className="flex justify-between text-text-secondary">
-                  <span>Worldwide Priority Express</span>
+                  <span>Islandwide Delivery</span>
                   <span className="font-mono text-text-primary">
-                    {shippingFee === 0 ? 'Complimentary' : `$${shippingFee}`}
+                    {shippingFee === 0 ? 'Free Delivery' : `LKR ${shippingFee.toLocaleString()}`}
                   </span>
                 </div>
                 <div className="flex justify-between text-base font-black pt-2 border-t border-border-default text-text-primary">
                   <span>Total Investment</span>
-                  <span className="font-mono text-xl">${total.toLocaleString()}</span>
+                  <span className="font-mono text-xl">LKR {total.toLocaleString()}</span>
                 </div>
               </div>
 

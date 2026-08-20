@@ -103,7 +103,7 @@ export const BespokeConfigurator = () => {
                   }`}
                 >
                   <div className="text-xs font-bold text-text-primary uppercase font-sans">{sil.name}</div>
-                  <div className="mono-telemetry text-[10px] text-text-muted mt-1">${sil.basePrice.toLocaleString()}</div>
+                  <div className="mono-telemetry text-[10px] text-text-muted mt-1">LKR {sil.basePrice.toLocaleString()}</div>
                 </button>
               ))}
             </div>
@@ -131,7 +131,7 @@ export const BespokeConfigurator = () => {
                     <div className="mono-telemetry text-[10px] text-text-muted mt-0.5">{fab.sub}</div>
                   </div>
                   <span className="mono-telemetry text-[10px] font-bold text-text-primary shrink-0">
-                    {fab.priceModifier >= 0 ? `+$${fab.priceModifier}` : `-$${Math.abs(fab.priceModifier)}`}
+                    {fab.priceModifier >= 0 ? `+LKR ${fab.priceModifier.toLocaleString()}` : `-LKR ${Math.abs(fab.priceModifier).toLocaleString()}`}
                   </span>
                 </button>
               ))}
@@ -156,7 +156,7 @@ export const BespokeConfigurator = () => {
                 >
                   <div className="text-xs font-bold text-text-primary">{hw.name}</div>
                   <div className="mono-telemetry text-[10px] text-text-muted mt-1">
-                    {hw.priceModifier > 0 ? `+$${hw.priceModifier}` : 'Standard'}
+                    {hw.priceModifier > 0 ? `+LKR ${hw.priceModifier.toLocaleString()}` : 'Standard'}
                   </div>
                 </button>
               ))}
@@ -220,7 +220,7 @@ export const BespokeConfigurator = () => {
                 >
                   <span>{adj.label}</span>
                   <span className="mono-telemetry text-[10px] font-bold">
-                    {adj.price > 0 ? `+$${adj.price}` : 'Complimentary'}
+                    {adj.price > 0 ? `+LKR ${adj.price.toLocaleString()}` : 'Complimentary'}
                   </span>
                 </button>
               ))}
@@ -253,7 +253,7 @@ export const BespokeConfigurator = () => {
                   <Clock className="w-3.5 h-3.5" />
                   <span>LEAD TIME: {selectedSilhouette.leadTime}</span>
                 </div>
-                <span className="mono-telemetry text-[9px] text-neutral-400">MILAN VAULT</span>
+                <span className="mono-telemetry text-[9px] text-neutral-400">COLOMBO ATELIER</span>
               </div>
             </div>
 
@@ -261,32 +261,32 @@ export const BespokeConfigurator = () => {
             <div className="space-y-2.5 pt-2 text-xs">
               <div className="mono-telemetry text-[10px] text-text-muted pb-1 border-b border-border-default flex items-center justify-between">
                 <span>COMMISSION BREAKDOWN</span>
-                <span>ATELIER MILANO</span>
+                <span>ATELIER COLOMBO</span>
               </div>
 
               <div className="flex justify-between text-text-secondary">
                 <span>Base Silhouette: {selectedSilhouette.name}</span>
-                <span className="font-mono text-text-primary">${selectedSilhouette.basePrice}</span>
+                <span className="font-mono text-text-primary">LKR {selectedSilhouette.basePrice.toLocaleString()}</span>
               </div>
 
               <div className="flex justify-between text-text-secondary">
                 <span>Textile: {selectedFabric.name}</span>
                 <span className="font-mono text-text-primary">
-                  {selectedFabric.priceModifier >= 0 ? `+$${selectedFabric.priceModifier}` : `-$${Math.abs(selectedFabric.priceModifier)}`}
+                  {selectedFabric.priceModifier >= 0 ? `+LKR ${selectedFabric.priceModifier.toLocaleString()}` : `-LKR ${Math.abs(selectedFabric.priceModifier).toLocaleString()}`}
                 </span>
               </div>
 
               <div className="flex justify-between text-text-secondary">
                 <span>Hardware: {selectedHardware.name}</span>
                 <span className="font-mono text-text-primary">
-                  {selectedHardware.priceModifier > 0 ? `+$${selectedHardware.priceModifier}` : '$0'}
+                  {selectedHardware.priceModifier > 0 ? `+LKR ${selectedHardware.priceModifier.toLocaleString()}` : 'LKR 0'}
                 </span>
               </div>
 
               <div className="flex justify-between text-text-secondary">
                 <span>Fit Modifier: {selectedAdjustment.label}</span>
                 <span className="font-mono text-text-primary">
-                  {selectedAdjustment.price > 0 ? `+$${selectedAdjustment.price}` : '$0'}
+                  {selectedAdjustment.price > 0 ? `+LKR ${selectedAdjustment.price.toLocaleString()}` : 'LKR 0'}
                 </span>
               </div>
 
@@ -300,10 +300,10 @@ export const BespokeConfigurator = () => {
             <div className="pt-4 border-t border-border-default flex items-baseline justify-between">
               <div>
                 <span className="mono-telemetry text-[10px] text-text-muted block">COMMISSION TOTAL</span>
-                <span className="text-xs text-text-secondary font-light">Worldwide Priority Express Included</span>
+                <span className="text-xs text-text-secondary font-light">Free Islandwide Delivery Included</span>
               </div>
               <div className="text-3xl font-black font-mono text-text-primary">
-                ${displayPrice.toLocaleString()}
+                LKR {displayPrice.toLocaleString()}
               </div>
             </div>
 

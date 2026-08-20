@@ -150,8 +150,8 @@ export const CartProvider = ({ children }) => {
   const rawSubtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const discountAmount = appliedPromo ? rawSubtotal * appliedPromo.discount : 0;
   const subtotal = Math.max(0, rawSubtotal - discountAmount);
-  const shippingThreshold = 1000;
-  const shippingFee = subtotal >= shippingThreshold || subtotal === 0 ? 0 : 45;
+  const shippingThreshold = 6000;
+  const shippingFee = subtotal >= shippingThreshold || subtotal === 0 ? 0 : 500;
   const total = subtotal + shippingFee;
 
   return (

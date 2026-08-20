@@ -128,7 +128,7 @@ export const ProductDetailPage = ({ product, onBack, onSelectProduct }) => {
               </h1>
 
               <div className="text-3xl font-black font-mono text-text-primary pt-1">
-                ${product.price.toLocaleString()}
+                LKR {product.price.toLocaleString()}
               </div>
 
               <p className="text-sm text-text-secondary leading-relaxed font-light pt-2">
@@ -220,7 +220,7 @@ export const ProductDetailPage = ({ product, onBack, onSelectProduct }) => {
                 ) : (
                   <>
                     <ShoppingBag className="w-4 h-4" />
-                    <span>Add to Bag — ${(product.price * quantity).toLocaleString()}</span>
+                    <span>Add to Bag — LKR {(product.price * quantity).toLocaleString()}</span>
                   </>
                 )}
               </button>
@@ -309,7 +309,7 @@ export const ProductDetailPage = ({ product, onBack, onSelectProduct }) => {
                       {item.name}
                     </h4>
                     <div className="text-xs font-black font-mono text-text-primary">
-                      ${item.price.toLocaleString()}
+                      LKR {item.price.toLocaleString()}
                     </div>
                   </div>
                 </div>

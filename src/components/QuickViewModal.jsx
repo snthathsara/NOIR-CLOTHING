@@ -90,7 +90,7 @@ export const QuickViewModal = () => {
               {quickViewProduct.name}
             </h2>
             <div className="text-2xl font-black font-mono text-text-primary mt-2">
-              ${quickViewProduct.price.toLocaleString()}
+              LKR {quickViewProduct.price.toLocaleString()}
             </div>
 
             <p className="text-xs sm:text-sm text-text-secondary mt-3 font-light leading-relaxed">
